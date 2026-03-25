@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ricardo Flores — Portfolio Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+
+    <nav>
+        <div class="logo">RF</div> <div class="nav-links">
+            <a href="#hero">Inicio</a>
+            <a href="#sobreMi">Sobre mí</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="trayectoria.html">Trayectoria</a>
+            <a href="#contacto">Contacto</a>
+            </div>
+        <button class="botonTema" id="botonTema" onclick="cambiarTema()">☀️ Modo claro</button>
+    </nav>
+
+   <section id="hero" class="hero-split">
+    <div class="hero-content">
+        <span class="tagline">Ingeniería & Docencia Universitaria</span>
+        <h1>Ricardo <br><span>Flores</span></h1>
+        <p>Profesor de Análisis Matemático en UTN San Francisco. +30 años transformando la educación y la tecnología.</p>
+        <div class="hero-actions">
+            <a href="#proyectos" class="btn-main">Explorar Proyectos</a>
+            <a href="#contacto" class="btn-sub">Escribirme</a>
+        </div>
+    </div>
+   </section>
+
+    <section id="sobreMi">
+        <h2>Sobre mí</h2>
+        <div class="linea"></div>
+        <div class="sobreMiGrid">
+            <div class="sobreMiFoto">
+                <img src="https://imgs.search.brave.com/ZncOi7R2S28dwXr1CsEBUeavIkuKoU9H0zVy5xqQ2Go/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jLnN1/cGVycHJvZi5jb20v/aS9hLzE0NDYzMDkw/LzczNTQ2MzgvNjAw/LzIwMjIxMjE0MTM0/NTExL3Byb2Zlc29y/LXVuaXZlcnNpdGFy/aW8tb2ZyZWNlLWNs/YXNlcy1tYXRlbWF0/aWNhLWFuYWxpc2lz/LW1hdGVtYXRpY28t/YWxnZWJyYS1maXNp/Y2EtcXVpbWljYS5q/cGc" alt="Ricardo Flores">
+            </div>
+            <div class="sobreMiTexto">
+                <p>Soy actualmente profesor de la <strong>UTN Regional San Francisco</strong>. Con 62 años de edad, cuento con una sólida trayectoria en el sector tecnológico, habiendo trabajado en empresas líderes como <strong>Mercado Libre</strong> y <strong>Personal</strong>.</p>
+                <p>Mi pasión combina la ingeniería con la educación, dictando las cátedras de Análisis Matemático I y II, formando a las próximas generaciones de ingenieros.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="linea"></div>
+        <div class="habilidadesGrid">
+            <div class="habilidad">
+                <span>C / Java / Python</span>
+            </div>
+            <div class="habilidad">
+                <span>Desarrollo Web (HTML/CSS/JS)</span>
+            </div>
+            <div class="habilidad">
+                <span>Análisis Matemático</span>
+            </div>
+            <div class="habilidad">
+                <span>Planificación Académica</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos">
+        <h2>Proyectos Destacados</h2>
+        <div class="linea"></div>
+        <div class="proyectosGrid">
+            <article class="proyecto">
+                <h3>Gestión Académica</h3>
+                <p>Sistema integral para la administración de instituciones educativas.</p>
+            </article>
+            <article class="proyecto">
+                <h3>Simulador Matemático</h3>
+                <p>Herramienta interactiva para la enseñanza de Análisis Matemático en ingeniería.</p>
+            </article>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="linea"></div>
+        <form action="https://formspree.io/f/xnjoqdby" method="POST">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre..." required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="¿En qué puedo ayudarte?" required></textarea>
+
+            <button type="submit" class="botonEnviar">✉ Enviar mensaje</button>
+        </form>
+    </section>
+
+   <footer>
+    <p>Ricardo Flores — Ing. en Sistemas</p>
+    <div class="redes">
+        <a href="https://github.com/tu-usuario" target="_blank">GitHub</a> | 
+        <a href="https://linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a>
+    </div>
+    <p style="font-size:12px; margin-top:10px;">© 2024 - Portfolio Profesional</p>
+</footer>
+
+    <script>
+        var botonTema = document.getElementById("botonTema");
+        if (localStorage.getItem("tema") === "claro") {
+            document.body.classList.add("claro");
+            botonTema.textContent = "🌙 Modo oscuro";
+        }
+        function cambiarTema() {
+            document.body.classList.toggle("claro");
+            var claro = document.body.classList.contains("claro");
+            botonTema.textContent = claro ? "🌙 Modo oscuro" : "☀️ Modo claro";
+            localStorage.setItem("tema", claro ? "claro" : "oscuro");
+        }
+    </script>
+</body>
+</html>
