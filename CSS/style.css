@@ -58,7 +58,10 @@ nav {
     letter-spacing: 1px;
     color: var(--muted);
 }
-
+.nav-links a.activo {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
 .nav-links a:hover { color: var(--accent); }
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&family=Playfair+Display:wght@700&display=swap');
